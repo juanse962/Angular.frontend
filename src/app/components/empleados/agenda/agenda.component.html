@@ -1,0 +1,48 @@
+<form [formGroup]="form" (ngSubmit)="guardarEmpleado()">
+    <div class="row">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="disabledSelect" class="form-label">Tipo de documento</label>
+            <select id="disabledSelect" class="form-select" formControlName="tipoDeDocumento">
+                <option>Cedula de ciudadania</option>
+                <option>Cedula de extranjeria</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="disabledSelect" class="form-label">Numero de documento</label>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="numeroDeDocumento" required="Numeros" pattern="[0-9]+" placeholder="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="area" placeholder="Area">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="subArea" placeholder="Sub Area">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-grid gap-2">
+        <button class="btn btn-success" type="submit" [disabled]="form.invalid">Enviar</button>
+    </div>
+</form>
